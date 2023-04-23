@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+#menuBar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 25px 25px 30px;
+  background-color: pink;
+}
+
+#menuBar > ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: transform 0.5s ease-in-out;
+}
+
+#menuBar > ul.hide,
+ul.ulOptions > li.hide {
+  visibility: hidden;
+  transform: translateY(-50px);
+}
+
+#avatar {
+  background-image: url(./assets/avatar.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 70px;
+  width: 70px;
+}
+
+.menuImg {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  visibility: visible;
+}
+
+.menuText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  visibility: visible;
+}
+
+#searchImg {
+  background-image: url(./assets/search.png);
+}
+
+#accountImg {
+  background-image: url(./assets/account.png);
+}
+
+#settingsImg {
+  background-image: url(./assets/setting.png);
+}
+
+#logOutImg {
+  background-image: url(./assets/log-out.png);
+}
