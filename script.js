@@ -4,12 +4,16 @@ let visible = false;
 
 const dropDown = () => {
   let elements = document.querySelectorAll(".ulOptions, .menuImg, .menuText");
-  if (visible === true) {
+  if (visible === false) {
+    //can't see it
+    elements.forEach((element) => element.classList.remove("hide"));
+    elements.forEach((element) => element.classList.add("visible"));
+    visible = true;
+  } else {
+    // can see it
+    elements.forEach((element) => element.classList.remove("visible"));
     elements.forEach((element) => element.classList.add("hide"));
     visible = false;
-  } else {
-    elements.forEach((element) => element.classList.remove("hide"));
-    visible = true;
   }
 };
 
