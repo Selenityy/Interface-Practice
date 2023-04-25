@@ -50,6 +50,7 @@ const checkCircles = (index) => {
     circleNodes.forEach((node) => {
       node.style.filter = "grayscale(1) invert(50%)";
     });
+    imageElement.src = images[index].src;
   } else if (index === 1) {
     let circle = document.getElementById("circle2");
     let circleNodes = document.querySelectorAll(
@@ -59,6 +60,7 @@ const checkCircles = (index) => {
     circleNodes.forEach((node) => {
       node.style.filter = "grayscale(1) invert(50%)";
     });
+    imageElement.src = images[index].src;
   } else if (index === 2) {
     let circle = document.getElementById("circle3");
     let circleNodes = document.querySelectorAll(
@@ -68,6 +70,7 @@ const checkCircles = (index) => {
     circleNodes.forEach((node) => {
       node.style.filter = "grayscale(1) invert(50%)";
     });
+    imageElement.src = images[index].src;
   } else if (index === 3) {
     let circle = document.getElementById("circle4");
     let circleNodes = document.querySelectorAll(
@@ -77,6 +80,7 @@ const checkCircles = (index) => {
     circleNodes.forEach((node) => {
       node.style.filter = "grayscale(1) invert(50%)";
     });
+    imageElement.src = images[index].src;
   } else if (index === 4) {
     let circle = document.getElementById("circle5");
     let circleNodes = document.querySelectorAll(
@@ -86,6 +90,7 @@ const checkCircles = (index) => {
     circleNodes.forEach((node) => {
       node.style.filter = "grayscale(1) invert(50%)";
     });
+    imageElement.src = images[index].src;
   }
 };
 
@@ -113,8 +118,24 @@ const leftArrowOnClick = () => {
   }
 };
 
-const circleOnClick = () => {
-  console.log("circle");
+const circleOnClick = (event) => {
+  let circle = event.target.id;
+  if (circle === "circle1") {
+    index = 0;
+    checkCircles(index);
+  } else if (circle === "circle2") {
+    index = 1;
+    checkCircles(index);
+  } else if (circle === "circle3") {
+    index = 2;
+    checkCircles(index);
+  } else if (circle === "circle4") {
+    index = 3;
+    checkCircles(index);
+  } else if (circle === "circle5") {
+    index = 4;
+    checkCircles(index);
+  }
 };
 
 let prev = document.getElementById("previous");
