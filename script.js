@@ -40,13 +40,64 @@ let maxIndex = imageUrls.length - 1;
 let imageElement = document.getElementById("image");
 imageElement.src = images[index].src;
 
+const checkCircles = (index) => {
+  if (index === 0) {
+    let circle = document.getElementById("circle1");
+    let circleNodes = document.querySelectorAll(
+      "#circle2, #circle3, #circle4, #circle5"
+    );
+    circle.style.filter = "grayscale(1) invert(1)";
+    circleNodes.forEach((node) => {
+      node.style.filter = "grayscale(1) invert(50%)";
+    });
+  } else if (index === 1) {
+    let circle = document.getElementById("circle2");
+    let circleNodes = document.querySelectorAll(
+      "#circle1, #circle3, #circle4, #circle5"
+    );
+    circle.style.filter = "grayscale(1) invert(1)";
+    circleNodes.forEach((node) => {
+      node.style.filter = "grayscale(1) invert(50%)";
+    });
+  } else if (index === 2) {
+    let circle = document.getElementById("circle3");
+    let circleNodes = document.querySelectorAll(
+      "#circle1, #circle2, #circle4, #circle5"
+    );
+    circle.style.filter = "grayscale(1) invert(1)";
+    circleNodes.forEach((node) => {
+      node.style.filter = "grayscale(1) invert(50%)";
+    });
+  } else if (index === 3) {
+    let circle = document.getElementById("circle4");
+    let circleNodes = document.querySelectorAll(
+      "#circle1, #circle2, #circle3, #circle5"
+    );
+    circle.style.filter = "grayscale(1) invert(1)";
+    circleNodes.forEach((node) => {
+      node.style.filter = "grayscale(1) invert(50%)";
+    });
+  } else if (index === 4) {
+    let circle = document.getElementById("circle5");
+    let circleNodes = document.querySelectorAll(
+      "#circle1, #circle2, #circle3, #circle4"
+    );
+    circle.style.filter = "grayscale(1) invert(1)";
+    circleNodes.forEach((node) => {
+      node.style.filter = "grayscale(1) invert(50%)";
+    });
+  }
+};
+
 const rightArrowOnClick = () => {
   if (index >= 0 && index < 4) {
     index++;
     imageElement.src = images[index].src;
+    checkCircles(index);
   } else if (index === 4) {
     index = 0;
     imageElement.src = images[index].src;
+    checkCircles(index);
   }
 };
 
@@ -54,9 +105,11 @@ const leftArrowOnClick = () => {
   if (index <= 4 && index > 0) {
     index--;
     imageElement.src = images[index].src;
+    checkCircles(index);
   } else if (index === 0) {
     index = 4;
     imageElement.src = images[index].src;
+    checkCircles(index);
   }
 };
 
@@ -80,3 +133,5 @@ const circles = [
 circles.forEach((circle) => {
   circle.addEventListener("click", circleOnClick);
 });
+
+checkCircles(index);
