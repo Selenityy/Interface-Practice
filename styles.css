@@ -93,44 +93,7 @@ ul.ulOptions > li.hide {
   background-color: brown;
 }
 
-#image1 {
-  background-image: url(./assets/sunrise.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#image2 {
-  background-image: url(./assets/daytime.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#image3 {
-  background-image: url(./assets/sunset.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#image4 {
-  background-image: url(./assets/sunset2.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#image5 {
-  background-image: url(./assets/night.png);
+#image {
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -153,7 +116,13 @@ ul.ulOptions > li.hide {
   width: 30px;
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 25%;
+  filter: grayscale(1) invert(50%);
+}
+
+#previous:hover {
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  filter: grayscale(1) invert(1);
 }
 
 #next {
@@ -164,7 +133,13 @@ ul.ulOptions > li.hide {
   width: 30px;
   position: absolute;
   top: 50%;
-  right: 10%;
+  right: 25%;
+  filter: grayscale(1) invert(50%);
+}
+
+#next:hover {
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  filter: grayscale(1) invert(1);
 }
 
 /* #navigationCircles {
@@ -181,6 +156,10 @@ ul.ulOptions > li.hide {
   width: 15px;
   position: absolute;
   top: 95%;
+  filter: grayscale(1) invert(50%);
+}
+
+.circle:hover {
   filter: grayscale(1) invert(1);
 }
 
